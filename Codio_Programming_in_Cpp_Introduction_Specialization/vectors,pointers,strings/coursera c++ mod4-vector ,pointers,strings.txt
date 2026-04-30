@@ -7,11 +7,8 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-////////// DO NOT EDIT! //////////
-  string path = argv[1];        //
-//////////////////////////////////  
+  string path = argv[1];        
   
-  //add code below this line
   try {
     ifstream file;
     string read;
@@ -37,11 +34,12 @@ int main(int argc, char** argv) {
   catch (exception& e) {
     cerr << e.what() << endl;
   }
-  //add code above this line
   
   return 0;
 }
 
+------------------------------------------
+------------------------------
 
 #include <iostream>
 #include <fstream>
@@ -52,11 +50,8 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-////////// DO NOT EDIT! //////////
-  string path = argv[1];        //
-//////////////////////////////////  
+  string path = argv[1];        
   
-  //add code below this line
   ifstream file(path);
 
   if (!file.is_open()) {
@@ -93,10 +88,12 @@ int main(int argc, char** argv) {
        << col2 / rows << " "
        << col3 / rows << " "
        << col4 / rows;
-  //add code above this line
   
   return 0;
 }
+
+------------------------------------------
+------------------------------
 
 #include <iostream>
 #include <fstream>
@@ -106,10 +103,8 @@ int main(int argc, char** argv) {
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    // Required line (DO NOT CHANGE)
     string path = argv[1];
 
-    //add code below this line
     ifstream file(path);
 
     if (!file.is_open()) {
@@ -129,10 +124,12 @@ int main(int argc, char* argv[]) {
     for (int i = lines.size() - 1; i >= 0; i--) {
         cout << lines[i] << endl;
     }
-    //add code above this line
 
     return 0;
 }
+
+------------------------------------------
+------------------------------
 
 #include <iostream>
 #include <fstream>
@@ -142,10 +139,8 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    // Required line (DO NOT CHANGE)
     string path = argv[1];
 
-    //add code below this line
     ifstream file(path);
 
     if (!file.is_open()) {
@@ -176,13 +171,12 @@ int main(int argc, char* argv[]) {
     file.close();
 
     cout << "The oldest person is " << oldestName << "." << endl;
-    //add code above this line
 
     return 0;
 }
 
-
-
+------------------------------------------
+------------------------------
 
 #include <iostream>
 #include <fstream>
@@ -193,10 +187,8 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    // Required line (DO NOT CHANGE)
     string path = argv[1];
 
-    //add code below this line
     ifstream file(path);
 
     if (!file.is_open()) {
@@ -207,7 +199,7 @@ int main(int argc, char* argv[]) {
     string line;
     vector<string> southernCities;
 
-    getline(file, line); // skip header
+    getline(file, line);
 
     while (getline(file, line)) {
         stringstream ss(line);
@@ -237,7 +229,6 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "." << endl;
-    //add code above this line
 
     return 0;
 }
