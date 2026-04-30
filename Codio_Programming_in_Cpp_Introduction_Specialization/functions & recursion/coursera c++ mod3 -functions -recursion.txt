@@ -1,0 +1,131 @@
+#include <iostream>
+using namespace std;
+
+class PracticeClass {
+public:
+    string name;
+};
+
+int main() {
+    PracticeClass obj;
+    obj.name = "Class Object";
+    cout << obj.name;
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+class Cat {
+public:
+    string breed;
+    string color;
+    string name;
+
+    Cat() {
+        breed = "American Shorthair";
+        color = "black";
+        name = "Kiwi";
+    }
+};
+
+int main() {
+    Cat cat;
+    cout << cat.breed << endl;
+    cout << cat.color << endl;
+    cout << cat.name << endl;
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Superhero {
+public:
+    string name;
+    string identity;
+    vector<string> powers;
+
+    Superhero(string name, string identity, vector<string> powers) {
+        this->name = name;
+        this->identity = identity;
+        this->powers = powers;
+    }
+};
+
+int main() {
+    Superhero iron_man("Iron Man", "Tony Stark", {"armored suit", "laser beams", "flight"});
+    cout << iron_man.name << endl;
+    cout << iron_man.identity << endl;
+    for (auto a : iron_man.powers) {
+        cout << a << endl;
+    }
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+class Observation {
+public:
+    string date;
+    double temperature;
+    double elevation;
+    int penguins;
+    double precipitation;
+
+    Observation(string date, double temperature, double elevation, int penguins) {
+        this->date = date;
+        this->temperature = temperature;
+        this->elevation = elevation;
+        this->penguins = penguins;
+        this->precipitation = 0;
+    }
+};
+
+int main() {
+    Observation o("October 26, 2019", -47, 329.4, 3);
+    cout << "Today is " << o.date << "." << endl;
+    cout << "Temperature: " << o.temperature << endl;
+    cout << "Elevation: " << o.elevation << endl;
+    cout << o.penguins << " penguins observed with " << o.precipitation << " precipitation." << endl;
+    return 0;
+}
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class BigCat {
+public:
+    string genus = "panthera";
+    string species;
+    string common_name;
+    vector<string> habitat;
+
+    BigCat(string species, string commonName, vector<string> habitat) {
+        this->species = species;
+        this->common_name = commonName;
+        this->habitat = habitat;
+    }
+};
+
+int main() {
+    BigCat snow_leopard("uncia", "snow leopard", {"Himalaya mountains", "Siberian mountains"});
+    
+    cout << "A " << snow_leopard.common_name; 
+    cout << " is part of the " << snow_leopard.species << " species." << endl;
+    cout << "Their genus class is " << snow_leopard.genus << "." << endl;
+    for (auto a : snow_leopard.habitat) {
+        cout << a << ", ";
+    }
+    cout << "etc." << endl;
+    return 0;
+}

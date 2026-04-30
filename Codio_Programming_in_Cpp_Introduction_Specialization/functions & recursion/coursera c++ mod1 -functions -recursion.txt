@@ -1,0 +1,129 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add code below this line
+
+double GetAvg(double a, double b) {
+    return (a + b) / 2;
+}
+
+//add code above this line
+
+int main(int argc, char** argv) {
+  try {
+    double x = stod(argv[1]);
+    double y = stod(argv[2]);
+    cout << GetAvg(x, y) << endl;
+  }
+  catch (invalid_argument& e) {
+    cout << "One or more invalid arguments." << endl;
+  }
+  return 0;
+}
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add code below this line
+
+void GetOddsEvens(string s, vector<int> v) {
+    if (s == "true") {
+        for (int n : v) {
+            if (n % 2 == 0) cout << n << endl;
+        }
+    } else if (s == "false") {
+        for (int n : v) {
+            if (n % 2 != 0) cout << n << endl;
+        }
+    }
+}
+
+//add code above this line
+
+int main(int argc, char** argv) {
+  string x = argv[1];
+  vector<int> y;
+  for (int i = 2; i < argc; i++) {
+    y.push_back(stoi(argv[i]));
+  }
+  GetOddsEvens(x, y);
+}
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add code below this line
+
+bool FindTerm(string term, vector<string> v) {
+    for (string s : v) {
+        if (s == term) return true;
+    }
+    return false;
+}
+
+//add code above this line
+
+int main(int argc, char** argv) {
+  string x = argv[1];
+  vector<string> y;
+  for (int i = 2; i < argc; i++) {
+    y.push_back(argv[i]);
+  }
+  cout << boolalpha << FindTerm(x, y) << endl;
+}
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add code below this line
+
+bool IsPalindrome(string s) {
+    string reversed = string(s.rbegin(), s.rend());
+    return s == reversed;
+}
+
+//add code above this line
+
+int main(int argc, char** argv) {
+  string x = argv[1];
+  cout << boolalpha << IsPalindrome(x) << endl;
+}
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+string Reverse(string x) {
+  string y;
+  for (int i = x.length() - 1; i >= 0; i--) {
+    y += x.at(i);
+  }
+  return y;
+}
+
+//add code below this line
+
+bool IsPalindrome(string s) {
+    return s == Reverse(s);
+}
+
+//add code above this line
+
+int main(int argc, char** argv) {
+  string x = argv[1];
+  cout << boolalpha << IsPalindrome(x) << endl;
+}

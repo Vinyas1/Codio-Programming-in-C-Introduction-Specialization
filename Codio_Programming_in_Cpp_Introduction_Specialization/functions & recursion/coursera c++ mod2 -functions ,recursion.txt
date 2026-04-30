@@ -1,0 +1,130 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+//add function definitions below this line
+
+int GetMaxHelper(const vector<int>& nums, int index) {
+    if (index == nums.size() - 1) {
+        return nums[index];
+    }
+
+    int maxOfRest = GetMaxHelper(nums, index + 1);
+    return max(nums[index], maxOfRest);
+}
+
+int GetMax(vector<int>& nums) {
+    return GetMaxHelper(nums, 0);
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  vector<int> nums;
+  for (int i = 1; i < argc; i++) {
+    nums.push_back(stoi(argv[i]));
+  }
+  cout << GetMax(nums) << endl;
+  return 0;
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+
+int RecursiveSum(int n) {
+    if (n <= 0) {
+        return 0;
+    }
+    return n + RecursiveSum(n - 1);
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << RecursiveSum(stoi(argv[1])) << endl;
+  return 0;
+}
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//add function definitions below this line
+
+int ListSum(vector<int> nums) {
+    if (nums.empty()) {
+        return 0;
+    }
+    int last = nums.back();
+    nums.pop_back();
+    return last + ListSum(nums);
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  vector<int> nums;
+  for (int i = 1; i < argc; i++) {
+    nums.push_back(stoi(argv[i]));
+  }
+  cout << ListSum(nums) << endl;
+  return 0;
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+
+int BunnyEars(int bunnies) {
+    if (bunnies == 0) {
+        return 0;
+    }
+    return 2 + BunnyEars(bunnies - 1);
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << BunnyEars(stoi(argv[1])) << endl;
+  return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+//add function definitions below this line
+
+string ReverseString(string s) {
+    if (s.empty()) {
+        return "";
+    }
+    return ReverseString(s.substr(1)) + s[0];
+}
+
+//add function definitions above this line
+
+int main(int argc, char** argv) {
+  cout << ReverseString(argv[1]) << endl;
+  return 0;
+}
+
