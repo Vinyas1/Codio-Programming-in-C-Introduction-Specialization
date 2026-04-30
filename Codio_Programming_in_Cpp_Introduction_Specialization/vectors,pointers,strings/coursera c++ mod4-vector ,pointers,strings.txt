@@ -1,0 +1,243 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <iomanip>
+using namespace std;
+
+int main(int argc, char** argv) {
+
+////////// DO NOT EDIT! //////////
+  string path = argv[1];        //
+//////////////////////////////////  
+  
+  //add code below this line
+  try {
+    ifstream file;
+    string read;
+    int lines = 0;
+    int chars = 0;
+
+    file.open(path);
+
+    if (!file) {
+      throw runtime_error("File failed to open.");
+    }
+
+    while (getline(file, read)) {
+      lines++;
+      chars += read.length();
+    }
+
+    file.close();
+
+    cout << lines << " line(s)" << endl;
+    cout << chars << " character(s)";
+  }
+  catch (exception& e) {
+    cerr << e.what() << endl;
+  }
+  //add code above this line
+  
+  return 0;
+}
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
+#include <iomanip>
+using namespace std;
+
+int main(int argc, char** argv) {
+
+////////// DO NOT EDIT! //////////
+  string path = argv[1];        //
+//////////////////////////////////  
+  
+  //add code below this line
+  ifstream file(path);
+
+  if (!file.is_open()) {
+    cout << "File failed to open." << endl;
+    return 1;
+  }
+
+  string line;
+  double col1 = 0, col2 = 0, col3 = 0, col4 = 0;
+  int rows = 0;
+
+  while (getline(file, line)) {
+    stringstream ss(line);
+    string value;
+
+    getline(ss, value, ',');
+    col1 += stod(value);
+
+    getline(ss, value, ',');
+    col2 += stod(value);
+
+    getline(ss, value, ',');
+    col3 += stod(value);
+
+    getline(ss, value, ',');
+    col4 += stod(value);
+
+    rows++;
+  }
+
+  file.close();
+
+  cout << col1 / rows << " "
+       << col2 / rows << " "
+       << col3 / rows << " "
+       << col4 / rows;
+  //add code above this line
+  
+  return 0;
+}
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    // Required line (DO NOT CHANGE)
+    string path = argv[1];
+
+    //add code below this line
+    ifstream file(path);
+
+    if (!file.is_open()) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+
+    vector<string> lines;
+    string line;
+
+    while (getline(file, line)) {
+        lines.push_back(line);
+    }
+
+    file.close();
+
+    for (int i = lines.size() - 1; i >= 0; i--) {
+        cout << lines[i] << endl;
+    }
+    //add code above this line
+
+    return 0;
+}
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    // Required line (DO NOT CHANGE)
+    string path = argv[1];
+
+    //add code below this line
+    ifstream file(path);
+
+    if (!file.is_open()) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+
+    string line;
+    string oldestName = "";
+    int oldestAge = -1;
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string name, ageStr, occupation;
+
+        getline(ss, name, '\t');
+        getline(ss, ageStr, '\t');
+        getline(ss, occupation, '\t');
+
+        int age = stoi(ageStr);
+
+        if (age > oldestAge) {
+            oldestAge = age;
+            oldestName = name;
+        }
+    }
+
+    file.close();
+
+    cout << "The oldest person is " << oldestName << "." << endl;
+    //add code above this line
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    // Required line (DO NOT CHANGE)
+    string path = argv[1];
+
+    //add code below this line
+    ifstream file(path);
+
+    if (!file.is_open()) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
+
+    string line;
+    vector<string> southernCities;
+
+    getline(file, line); // skip header
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string city, country, latStr, lonStr;
+
+        getline(ss, city, ',');
+        getline(ss, country, ',');
+        getline(ss, latStr, ',');
+        getline(ss, lonStr, ',');
+
+        double latitude = stod(latStr);
+
+        if (latitude < 0) {
+            southernCities.push_back(city);
+        }
+    }
+
+    file.close();
+
+    cout << "The following cities are in the Southern Hemisphere: ";
+
+    for (int i = 0; i < southernCities.size(); i++) {
+        cout << southernCities[i];
+        if (i < southernCities.size() - 1) {
+            cout << ", ";
+        }
+    }
+
+    cout << "." << endl;
+    //add code above this line
+
+    return 0;
+}
