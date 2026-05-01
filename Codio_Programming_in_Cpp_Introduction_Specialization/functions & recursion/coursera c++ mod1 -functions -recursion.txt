@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//add code below this line
 
 double GetAvg(double a, double b) {
     return (a + b) / 2;
