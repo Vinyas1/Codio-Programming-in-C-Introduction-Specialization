@@ -92,7 +92,6 @@ int main() {
   my_watch.SetMaterial("gold");
   my_watch.Summary();
 
-  //DO NOT EDIT CODE ABOVE THIS LINE
   
   return 0;
   
