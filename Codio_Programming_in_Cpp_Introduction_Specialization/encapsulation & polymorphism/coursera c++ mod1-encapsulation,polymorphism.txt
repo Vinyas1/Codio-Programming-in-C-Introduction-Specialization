@@ -212,7 +212,6 @@ class Atm {
 
 int main() {
   
-  //DO NOT EDIT CODE BELOW THIS LINE
 
   Atm my_atm;
   my_atm.Deposit(-10);
