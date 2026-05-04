@@ -16,7 +16,6 @@ class Fruit {
     void SetColor(string c) { color = c; }
 };
 
-//add class definitions above this line
 
 
 int main() {
