@@ -224,7 +224,6 @@ int main() {
   cout << setprecision(2);
   cout << my_atm.GetMoney() << endl;
 
-  //DO NOT EDIT CODE ABOVE THIS LINE
   
   return 0;
   
