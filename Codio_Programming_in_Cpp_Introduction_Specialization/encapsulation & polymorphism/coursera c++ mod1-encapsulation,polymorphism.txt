@@ -135,9 +135,7 @@ class Song {
       cout << money_earned << endl;
     }
 
-  //add class definitions above this line
   
-//DO NOT EDIT CODE BELOW THIS LINE
 
   private:
     string artist;
