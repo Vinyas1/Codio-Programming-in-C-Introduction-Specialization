@@ -29,8 +29,7 @@ int main() {
   cout << fruit.GetName() << endl;
   cout << fruit.GetColor() << endl;
 
-  //DO NOT EDIT CODE ABOVE THIS LINE
-  
+
   return 0;
   
 }
