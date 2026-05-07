@@ -5,7 +5,6 @@ int main(int argc, char** argv) {
   
   bool test = atoi((argv[1]));
   
-  //add code below this line
 
   bool my_bool = true;
   cout << my_bool << endl;
